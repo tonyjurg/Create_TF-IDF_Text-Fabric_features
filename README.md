@@ -17,6 +17,11 @@ You can view the production notebook on [nbviewer.org](https://nbviewer.org/gith
 
 Alternative, you can also download it from the [GitHub repository](https://github.com/tonyjurg/Create_TF-IDF_Text-Fabric_features/blob/main/create_tfidf_features.ipynb).
 
+## Usage
+
+These new features are added to the [N1904addons](https://tonyjurg.github.io/N1904addons/features/index.html) dataset.
+Information on how to load and use the dataset can be found [here](https://tonyjurg.github.io/N1904addons/loading_the_dataset.html).
+
 ## About Text-Fabric
 
 The Text-Fabric framework is designed to facilitate the analysis and manipulation of large-scale textual data, particularly in the context of ancient languages and biblical texts. The engine of Text-Fabric is its powerful Python library, which provides a comprehensive set of tools for processing and querying structured text data efficiently. The software package is accessible at [https://github.com/annotation/text-fabric](https://github.com/annotation/text-fabric).
