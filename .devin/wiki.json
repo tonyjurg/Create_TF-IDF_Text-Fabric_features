@@ -45,7 +45,7 @@
     },
     {
       "title": "Data Ingestion and Corpus Aggregation",
-      "purpose": "Explains how the N1904 corpus is loaded via Text-Fabric's `use('CenterBLC/N1904', ...)` call, how `collect_tokens_by_book()` iterates over all `word` nodes to extract the `normalized` and `book` features, and how the resulting Dict[str, List[str]] document-term structure treats each GNT book as a discrete document.",
+      "purpose": "Explains how the N1904 corpus with additional features is loaded via Text-Fabric's `use('CenterBLC/N1904', version="1.0.0", mod="tonyjurg/N1904addons/tf/", hoist=globals())` call, how `collect_tokens_by_book()` iterates over all `word` nodes to extract the `normalized` and `book` features, and how the resulting Dict[str, List[str]] document-term structure treats each GNT book as a discrete document.",
       "parent": "Pipeline Architecture",
       "page_notes": [
         {
