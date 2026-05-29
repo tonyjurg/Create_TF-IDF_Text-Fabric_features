@@ -1,0 +1,115 @@
+{
+  "repo_notes": [
+    {
+      "content": ""
+    }
+  ],
+  "pages": [
+    {
+      "title": "Project Overview",
+      "purpose": "High-level introduction to the Create_TF-IDF_Text-Fabric_features project: its purpose, the problem it solves, the corpus it targets, and how the outputs are consumed. Links to child pages for setup and background concepts.",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Getting Started",
+      "purpose": "Practical guide for running the pipeline: prerequisites (Python, Text-Fabric, scikit-learn, pandas), how to open and execute the notebook, where output files are written, and how to load the resulting features into a Text-Fabric session via N1904addons.",
+      "parent": "Project Overview",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "License and Citation",
+      "purpose": "Documents the CC BY 4.0 license terms, attribution requirements, the CITATION.cff schema, and how to cite the software in academic work. Covers the images/CC-BY-40.png badge asset and the N1904addons attribution URL.",
+      "parent": "Project Overview",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Pipeline Architecture",
+      "purpose": "Overview of the end-to-end data engineering pipeline: from corpus ingestion through TF-IDF computation to feature export. Introduces the two processing paths (full-corpus and non-stopword) and links to child pages for each stage.",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Data Ingestion and Corpus Aggregation",
+      "purpose": "Explains how the N1904 corpus is loaded via Text-Fabric's `use('CenterBLC/N1904', ...)` call, how `collect_tokens_by_book()` iterates over all `word` nodes to extract the `normalized` and `book` features, and how the resulting Dict[str, List[str]] document-term structure treats each GNT book as a discrete document.",
+      "parent": "Pipeline Architecture",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "TF-IDF Computation",
+      "purpose": "Deep dive into the scikit-learn TfidfVectorizer configuration: the identity tokenizer, accent preservation (`strip_accents=None`), case normalization, and why the vectorizer is configured to skip standard NLP preprocessing. Covers the full-corpus (`tfidf`) and non-stopword (`tfidfns`) computation paths, including the stop-word POS tag set `{'intj', 'prep', 'art', 'conj'}` and the 10^6 scaling factor used to convert float scores to integers.",
+      "parent": "Pipeline Architecture",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Feature Export and Persistence",
+      "purpose": "Describes how computed scores are mapped back to Text-Fabric node IDs, stored in a pandas DataFrame, and serialized to `.tf` files via `TF.save(nodeFeatures, metaData)`. Covers the `createMetadata()` utility, the output path (`~/text-fabric-data/github/CenterBLC/N1904/tf/1.0.0`), and the validation step using `sampleNodesForToken()`.",
+      "parent": "Pipeline Architecture",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Output Features Reference",
+      "purpose": "Reference documentation for the two Text-Fabric features produced by this pipeline. Introduces both features and links to child pages for detailed specifications.",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "tfidf Feature",
+      "purpose": "Full specification of the `tfidf` feature: node type (`word`), value type (`str`/`int`), scoring formula (TF-IDF × 1,000,000), example values (`12`, `85658`), the `.tf` file header metadata (author, coreData, version, license, dateWritten), and how to query it in a Text-Fabric session.",
+      "parent": "Output Features Reference",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "tfidfns Feature",
+      "purpose": "Full specification of the `tfidfns` (non-stopword) feature: how it differs from `tfidf`, the stop-word filtering logic applied before vectorization, example values (`0` for stop-words, `952564` for rare lexemes), the `.tf` file header metadata, and interpretation guidance for researchers.",
+      "parent": "Output Features Reference",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Glossary",
+      "purpose": "Definitions of all codebase-specific terms, domain concepts, abbreviations, and API names that an onboarding engineer or biblical-studies researcher would need to understand this project. Each entry includes code pointers.",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    }
+  ]
+}
